@@ -15,7 +15,7 @@ Av = np.dot(A, v_a)
 try:
     c = np.linalg.lstsq(Av.reshape(-1,1), y.reshape(-1,1), rcond=None)[0][0][0]
     residual = np.linalg.norm(c * Av - y)
-    print(f"a) Solution exists with c = {c:.2f}")
+    print(f"Solution exists with c = {c:.2f}")
 except np.linalg.LinAlgError:
     print("No solution exists")
 
@@ -30,7 +30,7 @@ ans_c = np.dot(v_c, A)
 print(ans_c)
 
 # d) trying k=3 col
-v_d = np.array([0, 0, 1, 0])
+v_d = np.array([[0], [0], [1], [0]])
 ans_d = np.dot(A, v_d)
 print(ans_d)
 
